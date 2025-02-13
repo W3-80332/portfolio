@@ -47,9 +47,9 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
-ScrollReveal().reveal('.home-contact h1, .about-img ', { origin: 'left' });
-ScrollReveal().reveal('.home-contact p, .about-content', { origin: 'right' }); 
+ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form , .slideshow-container', { origin: 'bottom' });
+ScrollReveal().reveal('.home-contact h1, .about-img ,  #edone', { origin: 'left' });
+ScrollReveal().reveal('.home-contact p, .about-content, #edtwo', { origin: 'right' }); 
 
 // TYPED JS
 
@@ -60,3 +60,32 @@ const typed = new Typed('.multiple-text', {
   backDelay: 1000,
   loop: true,
 });
+
+// CERTIFICATES
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}

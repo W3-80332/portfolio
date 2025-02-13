@@ -9,7 +9,7 @@
   outline: none;
   scroll-behavior: smooth;
   font-family: "Nunito", sans-serif;
-}
+} 
 
 :root {
     --bg-color: #191f36;
@@ -157,6 +157,8 @@ span {
   color: var(--main-color);
 }
 
+/*                                                ABOUT */
+
 .about {
   display: flex;
   justify-content: center;
@@ -187,6 +189,8 @@ span {
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
 }
+/*                                                SKILLS */
+
 
 .services h2 {
   margin-bottom: 5rem ;
@@ -228,6 +232,9 @@ span {
   font-size: 1.6rem;
   margin: 1rem 0 3rem;
 }
+
+/*                                                Projects */
+
 
 .portfolio {
   background: var(--snd-bg-color);
@@ -307,6 +314,9 @@ span {
   color: var(--main-color);
 }
 
+/*                                                CONTACT */
+
+
 .contact h2{
    margin-bottom: 3rem;
 
@@ -349,6 +359,8 @@ span {
   cursor: pointer;
 }
 
+/*                                                FOOTER */
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -381,38 +393,140 @@ span {
   color: var(--snd-bg-color);
 }
 
-
-
-
-
+/*                                                EDUCATION */
 .education .heading{
   color: var(--main-color);
 }
 
+.education h2 {
+  margin-bottom: 5rem ;
+}
 
-.education-item {
-  background: var(--snd-bg-color);
-  padding: .8rem;
-  border-radius: 5px;
-  margin: 1rem 0; 
-  font-size: 1.6rem;
-  width: 100%;
-  justify-content: center;
+.education-container {
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.education-container .education-box {
+  flex:  1 1 30rem;
+  background: var(--snd-bg-color);
+  padding: 3rem 2rem 4rem;
+  border-radius: 2rem;
+  text-align: center;
+  border: .2rem solid var(--bg-color);
+  transition: .5s ease;
+}
+
+.education-container .education-box:hover {
+  border-color: var(--main-color);
+  transform: scale(1.02);  
+}
+
+.education-box img{
+width: 25rem;
+}
+
+.education-box h3{
+  font-size: 2.6rem;
+}
+
+/*                                                  CERTIFICATES  */
+
+
+.certificates{
+  background-color: var(--snd-bg-color);
+}
+
+.certificates h2 {
+  margin-bottom: 5rem ;
+}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: var(--bg-color);
+}
+
+.text {
+  color: var(--main-color);
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
   text-align: center;
 }
 
-.education-item:hover{
-  box-shadow: 0 0 1rem var(--text-color);
-  font-size: 1.7rem;
+
+.numbertext {
+  color: var(--main-color);
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
-.education p{
-  padding-left: 1rem;
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color:  #717171;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
-/* BREAK POINT*/
+.active, .dot:hover {
+  background-color: var(--bg-color);
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
+
+/*                                                         MEDIA QUERES*/
 
 @media (max-width: 1200px){
   html {
@@ -536,6 +650,8 @@ span {
   html{
     font-size: 50%;
   }
+
+  .prev, .next,.text {font-size: 11px}
 
   .contact form .input-box input {
     width: 100%;
